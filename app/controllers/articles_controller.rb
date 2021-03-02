@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :destroy]
+  before_action :set_article, only: [:show, :destroy, :update]
 
   def index
     if params[:search].present?
@@ -33,7 +33,8 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-
+    @article.destroy
+    head :no_content
   end
 
   private

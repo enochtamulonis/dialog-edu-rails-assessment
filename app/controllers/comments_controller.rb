@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :destroy]
+  before_action :set_comment, only: [:show, :destroy, :update]
 
   def index
     if params[:article_id].present?
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   def create
     comment = Comment.new(comment_params)
     if comment.save
-      render json: comment.to_json, status: 200
+      render json: comment.to_json, status: 201
     else
       render json: { errors: comment.errors.to_json }, status: 400
     end
