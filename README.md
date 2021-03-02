@@ -13,10 +13,10 @@ The setups steps expect following tools installed on the system.
 git clone https://github.com/yunggindigo/dialog-edu-rails-assessment.git
 ```
 
-##### 2. Create the database
+##### 2. Create the database and migrate
 
 ```ruby
-rails db:create
+rails db:create db:migrate
 ```
 
 ##### 3. Start the Rails server
